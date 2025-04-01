@@ -10,20 +10,28 @@ CREATE TABLE persons (
 );
 
 -- Modificaremos la tabla creada anteriormente.
-alter table persons 
-add surname varchar(100);
+ALTER TABLE persons 
+ADD surname VARCHAR(100);
 
-alter table persons
+ALTER TABLE persons
 rename column surname to description;
 
-alter table persons 
-modify column description varchar(250);
+ALTER TABLE persons 
+MODIFY column description VARCHAR(250);
 
-alter table persons
-drop column description;
+ALTER TABLE persons
+DROP column description;
 
 -- Aniadir una foreing key
-ALTER TABLE pedidos 
-ADD CONSTRAINT fk_cliente
-FOREIGN KEY (cliente_id) REFERENCES persons(id)
-ON DELETE CASCADE;
+alter table users
+add constraint fk_companies
+foreign key(company_id) references companies(company_id)
+
+ALTER TABLE dni
+MODIFY column dni_id INT auto_increment;
+
+ALTER TABLE dni
+MODIFY column user_id INT UNIQUE;
+
+ALTER TABLE users
+DROP FOREIGN KEY fk_companies;
