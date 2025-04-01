@@ -1,0 +1,1 @@
+SELECT name, init_date as Fecha_Inicio_Programacion FROM users

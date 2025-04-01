@@ -1,0 +1,1 @@
+DROP DATABASE nombre_database;

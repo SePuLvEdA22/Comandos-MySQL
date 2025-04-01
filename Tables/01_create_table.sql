@@ -1,0 +1,17 @@
+CREATE TABLE persons (
+	id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created DATE,
+    CHECK(age > 18)
+);
+
+CREATE TABLE persons2 (
+	id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP(),
+    CHECK(age > 18)
+)

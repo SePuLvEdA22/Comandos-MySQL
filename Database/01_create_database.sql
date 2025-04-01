@@ -1,0 +1,1 @@
+CREATE DATABASE nombre_database;
