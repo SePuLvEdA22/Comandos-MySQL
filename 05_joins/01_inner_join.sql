@@ -52,3 +52,23 @@ join user_languages ul
 	on u.user_id = ul.user_id
 join languages l
 	on ul.language_id = l.language_id
+
+
+-- lista de personas que conocen al menos un lenguaje de programacion.
+select distinct u.name
+from users u
+join user_languages ul
+    on u.user_id = ul.user_id
+join languages l
+    on ul.language_id = l.language_id
+
+
+-- lista de personas que conocen mas de un lenguaje de programacion.
+select u.name, count(ul.language_id) as total_lenguajes
+from users u
+join user_languages ul
+	on u.user_id = ul.user_id
+join languages l
+	on ul.language_id = l.language_id
+GROUP BY u.name 
+HAVING total_lenguajes > 1
